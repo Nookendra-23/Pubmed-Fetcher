@@ -1,0 +1,32 @@
+[tool.poetry]
+# --- Basic Project Information ---
+name = "aganitha-pubmed-fetcher"
+version = "0.1.0"
+description = "A command-line tool to fetch PubMed research papers from authors affiliated with pharma or biotech companies."
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "aganitha_pubmed_fetcher", from = "src"}]
+
+[tool.poetry.dependencies]
+# --- Core Dependencies ---
+# We'll specify the Python version and add required libraries here.
+python = "^3.9"  # A modern, stable Python version.
+# We will add dependencies like requests, typer, etc. in the next step.
+
+[tool.poetry.group.dev.dependencies]
+# --- Development Dependencies ---
+# These are tools for development, not needed for the final program to run.
+pytest = "^8.0"   # For running tests.
+ruff = "^0.4.4"   # An extremely fast Python linter and formatter.
+mypy = "^1.10"    # For static type checking, as required by "Typed python".
+
+# --- Executable Script Configuration (Crucial!) ---
+[tool.poetry.scripts]
+# This section creates the executable command 'get-papers-list'.
+# When a user installs your package, this command will be available in their path.
+# It points to the 'main' function inside the 'cli.py' module within your package.
+get-papers-list = "aganitha_pubmed_fetcher.cli:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
