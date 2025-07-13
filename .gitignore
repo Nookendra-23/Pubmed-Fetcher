@@ -1,0 +1,18 @@
+# Poetry virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Build and distribution artifacts
+/dist/
+/build/
+*.egg-info/
+
+# IDE and OS-specific files
+.vscode/
+.idea/
+.DS_Store

@@ -12,6 +12,9 @@ packages = [{include = "aganitha_pubmed_fetcher", from = "src"}]
 # We'll specify the Python version and add required libraries here.
 python = "^3.9"  # A modern, stable Python version.
 # We will add dependencies like requests, typer, etc. in the next step.
+typer = {extras = ["all"], version = "^0.16.0"}
+pandas = "^2.3.1"
+requests = "^2.32.4"
 
 [tool.poetry.group.dev.dependencies]
 # --- Development Dependencies ---
