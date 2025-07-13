@@ -44,12 +44,15 @@ The tool is run via the `get-papers-list` command, executed through Poetry.
 poetry run get-papers-list [QUERY] --email [YOUR_EMAIL] [OPTIONS]
 ```
 ## Arguments & Options
+
+```bash
 Argument	Flag(s)	Required?	Description
 query	(Positional)	Yes	The search term for PubMed (e.g., "cancer therapy").
 email	-e, --email	Yes	Your email address (required by the NCBI API for access).
 file	-f, --file	No	Output CSV filename. If omitted, prints results to the console.
 debug	-d, --debug	No	Flag to enable verbose debug logging for detailed output.
 help	-h, --help	No	Displays the help message with all options.
+```
 
 ## Examples
 1. Search and Print to Console
