@@ -70,8 +70,9 @@ poetry run get-papers-list "CAR-T cell therapy" -e "your.name@example.com" -f ca
 
 ## 🏗️ Code Architecture
 
-**The project uses a standard src layout for a clean separation between the application code and other files.
+The project uses a standard src layout for a clean separation between the application code and other files.
 
+```bash
 aganitha-pubmed-fetcher/
 ├── pyproject.toml          # Project metadata, dependencies, and script definitions
 ├── README.md               # This documentation file
@@ -81,22 +82,23 @@ aganitha-pubmed-fetcher/
 │       ├── core.py         # Core logic: API calls, parsing, and filtering
 │       └── cli.py          # Command-line interface logic and output handling
 └── .gitignore              # Specifies files for Git to ignore
+```
 
-* **core.py: The "engine" of the application. It handles all communication with the PubMed API, parses the XML responses, and filters the data based on the non-academic author heuristic.
-* **cli.py: The "user interface." It handles parsing command-line arguments, calling the core logic, and formatting the final output for the user (either as a console table or a CSV file).
+* core.py: The "engine" of the application. It handles all communication with the PubMed API, parses the XML responses, and filters the data based on the non-academic author heuristic.
+* cli.py: The "user interface." It handles parsing command-line arguments, calling the core logic, and formatting the final output for the user (either as a console table or a CSV file).
 
 ## ⚙️ How It Works
 
-**The program follows a clear, sequential pipeline to get from a query to the final results:
-**eSearch: Takes the user's query and gets a list of matching PubMed IDs (PMIDs).
-**eFetch: Takes the list of PMIDs and fetches the full, detailed XML records for all of them in a single API call.
-**Parse: Reads the complex XML data, carefully extracting the title, publication date, authors, and affiliations for each paper.
-**Filter: Applies the non-academic heuristic to each author's affiliation. If a paper has at least one author from a corporate institution, it is kept.
-**Output: The final, filtered list of papers is converted into a pandas DataFrame and then either written to a CSV file or printed to the console.
+* The program follows a clear, sequential pipeline to get from a query to the final results:
+* eSearch: Takes the user's query and gets a list of matching PubMed IDs (PMIDs).
+* eFetch: Takes the list of PMIDs and fetches the full, detailed XML records for all of them in a single API call.
+* Parse: Reads the complex XML data, carefully extracting the title, publication date, authors, and affiliations for each paper.
+* Filter: Applies the non-academic heuristic to each author's affiliation. If a paper has at least one author from a corporate institution, it is kept.
+* Output: The final, filtered list of papers is converted into a pandas DataFrame and then either written to a CSV file or printed to the console.
 
 ## 🛠️ Tools & Acknowledgements
 
-**Poetry: For dependency management and packaging.
-**Requests: For making robust HTTP requests.
-**Pandas: For powerful data manipulation and CSV export.
+* Poetry: For dependency management and packaging.
+* Requests: For making robust HTTP requests.
+* Pandas: For powerful data manipulation and CSV export.
 
